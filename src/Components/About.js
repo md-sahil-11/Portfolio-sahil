@@ -8,7 +8,7 @@ function About() {
   const data = [
     {
       name: "React",
-      percentage: 60,
+      percentage: 70,
       text: `With a background in design, I work closely with design focused
       teams to build websites and microsites for companies and
       individuals.`,
