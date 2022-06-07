@@ -1,0 +1,49 @@
+.bar {
+    transform-origin: right;
+    transition: transform 0.25s ease-out;
+    /* width: ; */
+    width: fit-content;
+    /* height: 40px; */
+    /* background-color: hsl(180, 50%, 50%); */
+    background-color: #000000;
+    padding: 4px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    transform: scaleX(0.1);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    justify-self: start !important;
+    cursor: pointer;
+  }
+
+  .bar.active {
+    transform: scaleX(1);
+  }
+
+  .d-flex-vt {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+  }
+
+  .skills {
+      position: relative;
+  }
+
+  .skills .info {
+      position: sticky;
+      top: 0;
+  }
+
+  #progressBar {
+      height: 200px;
+      width: 200px;
+      /* position: relative; */
+  }
+
+  .skill-img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }

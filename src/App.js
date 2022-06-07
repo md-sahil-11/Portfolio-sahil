@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useEffect, useRef } from "react";
+
+import "./App.css";
+import LocomotiveScroll from "locomotive-scroll";
+// import lax from 'lax.js';
+import Header from "./Components/Header";
+import Landing from "./Components/Landing";
+
+
+// import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import About from "./Components/About";
+import Work from "./Components/Work";
 
 function App() {
+  const containerRef = useRef(null);
+  useEffect(() => {
+    // const scroll = new LocomotiveScroll({
+    //   el: document.querySelector("[data-scroll-container]"),
+    //   smooth: true,
+    //   // multiplier: 0.5,
+    // });
+    // lax.init();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <LocomotiveScrollProvider
+    //   options={{
+    //     smooth: true,
+    //     // ... all available Locomotive Scroll instance options
+    //   }}
+    //   watch={
+    //     [
+    //       //..all the dependencies you want to watch to update the scroll.
+    //       //  Basicaly, you would want to watch page/location changes
+    //       //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
+    //     ]
+    //   }
+    //   containerRef={containerRef}
+    // >
+    <>
+      <div 
+      // data-scroll-container 
+      ref={containerRef} className="App">
+        <Header />
+        {/* <main> */}
+        <Landing />
+        {/* </main> */}
+        <About />
+        {/* <Work /> */}
+      </div>
+    </>
+    // </LocomotiveScrollProvider>
   );
 }
 
