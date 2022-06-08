@@ -5,11 +5,12 @@ import LocomotiveScroll from "locomotive-scroll";
 // import lax from 'lax.js';
 import Header from "./Components/Header";
 import Landing from "./Components/Landing";
-
+import Sr from "./Components/Sr";
 
 // import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import About from "./Components/About";
 import Work from "./Components/Work";
+import Hobby from "./Components/Hobby";
 
 function App() {
   const containerRef = useRef(null);
@@ -38,15 +39,18 @@ function App() {
     //   containerRef={containerRef}
     // >
     <>
-      <div 
-      // data-scroll-container 
-      ref={containerRef} className="App">
+      <div
+        // data-scroll-container
+        ref={containerRef}
+        className="App"
+      >
         <Header />
         {/* <main> */}
         <Landing />
         {/* </main> */}
         <About />
         {/* <Work /> */}
+        <Hobby />
       </div>
     </>
     // </LocomotiveScrollProvider>
