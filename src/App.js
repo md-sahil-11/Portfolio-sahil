@@ -17,7 +17,7 @@ function App() {
   const containerRef = useRef(null);
   const [overlay, setOverlay] = useState(false);
   const [link, setLink] = useState(
-    "https://st2.depositphotos.com/1032577/5312/i/950/depositphotos_53128333-stock-photo-about-me-sign.jpg"
+    "https://www.hdwallpapers.in/download/its_all_about_me-HD.jpg"
   );
   useEffect(() => {
     // const scroll = new LocomotiveScroll({
@@ -73,7 +73,7 @@ function App() {
                 className="font-montserrat head menu-opt"
                 onMouseOver={() =>
                   setLink(
-                    "https://st2.depositphotos.com/1032577/5312/i/950/depositphotos_53128333-stock-photo-about-me-sign.jpg"
+                    "https://www.hdwallpapers.in/download/its_all_about_me-HD.jpg"
                   )
                 }
               >
@@ -92,7 +92,7 @@ function App() {
               <h1
                 onMouseOver={() =>
                   setLink(
-                    "https://media.istockphoto.com/photos/got-a-problem-contact-us-picture-id1129113667?k=20&m=1129113667&s=612x612&w=0&h=-NVtUCwT5PYmfHgHWUTKNkJhyJ_9rnD5m9ryN_ai_X4="
+                    "https://img2.goodfon.com/wallpaper/big/d/b9/iphone-5s-apple-touch-id.jpg"
                   )
                 }
                 className="font-montserrat head menu-opt"
