@@ -49,8 +49,8 @@ function App() {
         <Landing />
         {/* </main> */}
         <About />
-        {/* <Work /> */}
         <Hobby />
+        <Work />
       </div>
     </>
     // </LocomotiveScrollProvider>

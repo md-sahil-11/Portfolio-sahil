@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const textAnimation = (ele, num = 70) => {
+const textAnimation = (ele, num = 90) => {
   gsap.fromTo(
     ele,
     {

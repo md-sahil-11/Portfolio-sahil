@@ -17,6 +17,7 @@
     "react-locomotive-scroll": "^0.2.0",
     "react-move": "^6.5.0",
     "react-scripts": "5.0.1",
+    "simple-parallax-js": "^5.6.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
