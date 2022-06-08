@@ -6,7 +6,7 @@
   width: min(1440px, 90%);
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   /* background-color: #E1DFDD; */
 }
 

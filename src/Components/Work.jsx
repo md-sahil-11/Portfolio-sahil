@@ -19,7 +19,7 @@ function Work() {
   }, []);
 
   return (
-    <section className="work pdy">
+    <section data-scroll-section className="work pdy">
       <div className="experience pdy">
         <div className="row py-5 pdy" style={{ minHeight: "100vh" }}>
           <br />
@@ -50,15 +50,12 @@ function Work() {
                   Built a user-friendly website AI Console dashboard, resulting
                   in a 25% increase in user traffic and subsequently 33% in
                   customer purchases.
-                  <br />
+                  {/* <br />
                   <br />
                   Built a modular and reusable code component for demos where
                   uploaded files by users get processed with different ML
-                  models, which reduces development time by 40%.
-                  <br />
-                  <br />
-                  Built frontend admin panel and backend services for blogs
-                  section in the website as a solo project.
+                  models, which reduces development time by 40%. */}
+                  
                 </p>
               </div>
             </div>
@@ -79,15 +76,11 @@ function Work() {
                   Built a user-friendly website AI Console dashboard, resulting
                   in a 25% increase in user traffic and subsequently 33% in
                   customer purchases.
-                  <br />
+                  {/* <br />
                   <br />
                   Built a modular and reusable code component for demos where
                   uploaded files by users get processed with different ML
-                  models, which reduces development time by 40%.
-                  <br />
-                  <br />
-                  Built frontend admin panel and backend services for blogs
-                  section in the website as a solo project.
+                  models, which reduces development time by 40%. */}
                 </p>
               </div>
             </div>
@@ -115,8 +108,6 @@ function Work() {
             <div
               style={{
                 fontSize: 50,
-                // borderBottom: "12px solid #bbb9b8",
-                // textAlign: "center",
                 textDecoration: "underline",
               }}
               className="hobby-text work7"

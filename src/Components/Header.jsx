@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 
 import "../Styles/header.css";
 
-function Header() {
+function Header({ overlay, setOverlay }) {
   const selected = useRef();
   const options = useRef();
   const menuList = {
@@ -22,8 +22,14 @@ function Header() {
       // gsap.to(options.current, { opacity: 0 })
       setShowToggle(true);
       const about = document.getElementById("sec-about");
+      const work = document.querySelector(".work");
+
       if (offsetY >= about.offsetTop) {
         setMenu("2");
+      }
+      if (offsetY >= work.offsetTop) {
+        setMenu("3");
+        console.log("here");
       }
     } else {
       setMenu("1");
@@ -31,6 +37,29 @@ function Header() {
       // gsap.to(options.current, {x: 1 })
     }
   };
+
+  useEffect(() => {
+    if (overlay) {
+
+      let scrollTop = window.pageYOffset || window.scrollY;
+      let scrollLeft = window.pageXOffset || window.screenX;
+      document.querySelector('body').classList.add('stop-scrolling')
+      // if any scroll is attempted, set this to the previous value
+      gsap.to('.overlay-container', {
+        height: '100%'
+      })
+      window.onscroll = function () {
+        window.scrollTo(scrollLeft, scrollTop);
+      };
+    } else {
+      gsap.to('.overlay-container', {
+        height: 0
+      })
+      document.querySelector('body').classList.remove('stop-scrolling')
+      window.onscroll = scrollCheck
+    }
+
+  }, [overlay])
 
   useEffect(() => {
     gsap.to(selected.current, { opacity: 1 });
@@ -58,11 +87,14 @@ function Header() {
           {menuList[menu]}
         </div>
         {showToggle ? (
-          <div className="font-montserrat nav-menu hover-underline-animation">
+          <div
+            onClick={() => setOverlay(true)}
+            className="font-montserrat nav-menu hover-underline-animation"
+          >
             Menu
           </div>
         ) : (
-          <div className="nav-right flex-hz big-scr" ref={ options }>
+          <div className="nav-right flex-hz big-scr" ref={options}>
             <div className="font-montserrat nav-menu hover-underline-animation">
               About
             </div>

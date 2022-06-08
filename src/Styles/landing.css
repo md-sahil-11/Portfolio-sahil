@@ -10,6 +10,13 @@
     /* min-height: 100vh; */
 }
 
+.chars {
+    font-size: 0px;
+    /* overflow-y: hidden; */
+    /* width: fit-content; */
+    /* display: inline; */
+}
+
 /* .skills::after {
     content: '';
     position: absolute;
