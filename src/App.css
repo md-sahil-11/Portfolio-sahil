@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* cursor: none; */
+
 }
 
 .projects img {
@@ -43,6 +45,7 @@ body {
   height: 0px;
         /* overflow: auto; */
         /* overflow-x: hidden; */
+    /* cursor: none; */
 }
 
 .big-scr {
@@ -153,4 +156,56 @@ body {
 
 .menu-opt {
   cursor: pointer;
+}
+
+.circle {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  transition: 200ms ease-in-out;
+  z-index: 1000;
+  box-shadow: 0px 0px 4px color(#000000);
+  border: 2px solid #000000;
+}
+
+.fl-img {
+  pointer-events: none;
+  position: absolute;
+  /* border-radius: 50%; */
+  opacity: 0;
+  /* display: ; */
+  z-index: -1;
+  width: 300px;
+  height: auto;
+  /* box-shadow: 0px 0px 4px color(#000000); */
+  /* border: 2px solid #000000; */
+  -webkit-filter: grayscale(90%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(90%);
+    opacity: 0.8;
+}
+
+
+/* basic plane */
+
+.BasicPlane {
+  width: 100%;
+  height: 100%;
+  /* margin: 10vh auto; */
+}
+
+.BasicPlane img {
+  display: none;
+  object-fit: cover;
+}
+
+.curtains-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: inherit;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  width: 400px;
+  height: 400px;
 }

@@ -13,6 +13,7 @@
     "progressbar.js": "^1.1.0",
     "react": "^18.1.0",
     "react-circular-progressbar": "^2.0.4",
+    "react-curtains": "^1.0.10",
     "react-dom": "^18.1.0",
     "react-locomotive-scroll": "^0.2.0",
     "react-move": "^6.5.0",

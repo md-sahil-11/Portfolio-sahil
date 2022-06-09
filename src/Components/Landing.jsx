@@ -73,7 +73,7 @@ function Landing() {
       <div className="row" style={{ minHeight: "80vh" }}>
         <div className="col-md-2 col-xs-0"></div>
         <div className="col-md-9 col-xs-12">
-          <h1 className="font-montserrat head landing-lax1">
+          <h1 className="font-montserrat head landing-lax1 fl-img1">
             {/* HELLO, I AM A <br />
             FULL-STACK DEVELOPER */}
             <Text text={"HELLO, I AM A"} /> <br />
@@ -84,7 +84,7 @@ function Landing() {
             <div className="col-md-3 nav-main font-montserrat landing-text1">
               From India
             </div>
-            <div className="col-md-9 nav-main font-montserrat landing-text2">
+            <div className="col-md-9 nav-main font-montserrat landing-text2 fl-img2">
               Currently Student at <br />
               National Institute of Technology, Rourkela
             </div>

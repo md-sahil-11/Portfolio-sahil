@@ -6,118 +6,99 @@ import LocomotiveScroll from "locomotive-scroll";
 import Header from "./Components/Header";
 import Landing from "./Components/Landing";
 import Sr from "./Components/Sr";
+import { gsap } from "gsap";
+import simpleParallax from "simple-parallax-js";
+import { Curtains, Plane } from "react-curtains";
 
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import About from "./Components/About";
 import Work from "./Components/Work";
 import Hobby from "./Components/Hobby";
 import textAnimation from "./Helper/textAnimation";
+import Overlay from "./Components/Overlay";
+import createCircles from "./Helper/cursorAnimation";
+import BasicPlane from "./Components/Trial";
 
 function App() {
   const containerRef = useRef(null);
   const [overlay, setOverlay] = useState(false);
-  const [link, setLink] = useState(
-    "https://www.hdwallpapers.in/download/its_all_about_me-HD.jpg"
-  );
+  const [flimg, setFlimg] = useState(null);
+
+  const moveImage = (e, i) => {
+    const imgList = {
+      1: require("./Assets/images/fl1.jpeg"),
+      2: "https://images.newindianexpress.com/uploads/user/imagelibrary/2021/1/31/w1200X800/PARC_initiative.jpg",
+      3: "https://s.rfi.fr/media/display/dbb49488-15d8-11ea-aa65-005056a964fe/w:1280/p:16x9/worldmusicistock-508586144.jpg",
+      4: "https://cdn1.epicgames.com/ue/item/Badminton_Screenshot_1-1920x1080-2cf8892509c158692884b8d9548cf005.png?resize=1&w=1920",
+      5: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfG7cq4WHwtOqe0vNJBAXYLSgmMBDB7L313w&usqp=CAU",
+    };
+    setFlimg(imgList[i]);
+    const img = document.querySelector(".fl-img");
+    img.style.visibility = "visible";
+    gsap.to(img, {
+      opacity: 1,
+      ease: "ease",
+    });
+    img.style.left = e.pageX - img.offsetWidth / 2 + "px";
+    img.style.top = e.pageY - img.offsetHeight / 2 + "px";
+  };
+
+  const removeImage = () => {
+    const img = document.querySelector(".fl-img");
+    img.style.opacity = 0;
+    img.style.visibility = "hidden";
+  };
+
   useEffect(() => {
-    // const scroll = new LocomotiveScroll({
-    //   el: document.querySelector("[data-scroll-container]"),
-    //   smooth: true,
-    //   // multiplier: 0.5,
-    // });
-    // lax.init();
+    // return () => {
+    // window.scrollTo(0, 0)
+    // }
+    const image = document.querySelector(".fl-img");
+    new simpleParallax(image, {
+      delay: 0.6,
+      transition: "cubic-bezier(0,0,0,1)",
+    });
+
+    document
+      .querySelector("body")
+      .addEventListener("mousemove", (e) => createCircles(e));
+
+    for (let i = 1; i <= 5; i++) {
+      document
+        .querySelector(`.fl-img${i}`)
+        .addEventListener("mousemove", (e) => moveImage(e, i));
+
+      document
+        .querySelector(`.fl-img${i}`)
+        .addEventListener("mouseleave", (e) => removeImage(e, i));
+    }
   }, []);
-  useEffect(() => {
-    textAnimation(".content-img");
-  }, [link]);
 
   return (
-    // <LocomotiveScrollProvider
-    //   options={{
-    //     smooth: true,
-    //     // ... all available Locomotive Scroll instance options
-    //   }}
-    //   watch={
-    //     [
-    //       //..all the dependencies you want to watch to update the scroll.
-    //       //  Basicaly, you would want to watch page/location changes
-    //       //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-    //     ]
-    //   }
-    //   containerRef={containerRef}
-    // >
     <>
-      {/* {overlay &&  */}
-      <div className="overlay-container">
-        <div className="overlay">
-          <div
-            className="font-montserrat nav-menu nav-main pdy"
-            onClick={() => setOverlay(false)}
-          >
-            Close
-          </div>
-          <br />
-          <br />
-          <div className="row justify-content-end">
-            {/* <div className="col-md-1"></div> */}
-            <div className="col-md-8">
-              <img
-                className="content-img"
-                style={{ width: "90%", height: "auto" }}
-                src={link}
-                alt=""
-              />
-            </div>
-            <div className="menu col-md-4 pdy">
-              <h1
-                className="font-montserrat head menu-opt"
-                onMouseOver={() =>
-                  setLink(
-                    "https://www.hdwallpapers.in/download/its_all_about_me-HD.jpg"
-                  )
-                }
-              >
-                About
-              </h1>
-              <h1
-                className="font-montserrat head menu-opt"
-                onMouseOver={() =>
-                  setLink(
-                    "https://www.richardekwonye.com/images/about-cover.jpg"
-                  )
-                }
-              >
-                Work
-              </h1>
-              <h1
-                onMouseOver={() =>
-                  setLink(
-                    "https://img2.goodfon.com/wallpaper/big/d/b9/iphone-5s-apple-touch-id.jpg"
-                  )
-                }
-                className="font-montserrat head menu-opt"
-              >
-                Contact
-              </h1>
-            </div>
-          </div>
-        </div>
+      <div className="overlay-container container-fluid">
+        <Overlay setOverlay={setOverlay} overlay={overlay} />
       </div>
       <div
         data-scroll-container
         ref={containerRef}
-        className={overlay ? "App stop-scrolling" : "App"}
+        className={
+          overlay ? "App stop-scrolling container-fluid" : "App container-fluid"
+        }
       >
+        {/* <Curtains> */}
+          {/* <BasicPlane> */}
+          {/* </BasicPlane> */}
+        {/* </Curtains> */}
+        
+        <img className="fl-img" src={flimg} alt="" />
         <Header overlay={overlay} setOverlay={setOverlay} />
-        {/* <main> */}
         <Landing />
-        {/* </main> */}
         <About />
         <Hobby />
         <Work />
       </div>
     </>
-    // </LocomotiveScrollProvider>
   );
 }
 

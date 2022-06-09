@@ -28,9 +28,9 @@ function Hobby() {
           <br />
           <br />
           <br />
-          <div className="bar hobby-text">MUSIC</div>
-          <div className="bar hobby-text" style={{ color: '#000000' }}>BADMINTON</div>
-          <div className="bar hobby-text">GUITAR</div>
+          <div className="bar hobby-text fl-img3">MUSIC</div>
+          <div className="bar hobby-text fl-img4" style={{ color: '#000000' }}>BADMINTON</div>
+          <div className="bar hobby-text fl-img5">GUITAR</div>
         </div>
       </div>
       <div className="row">
